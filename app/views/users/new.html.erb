@@ -1,0 +1,33 @@
+
+    <div>新規ユーザー登録</div>
+    <%= flash[:notice] %>
+         <p>ユーザー名</p>
+        <%= form_for (@user) do |f| %>
+          <div><%= f.label :'姓' %><div>
+          <div><%= f.text_field :first_name %></div>
+          <div><%= f.label :'名' %><div>
+          <div><%= f.text_field :last_name %></div>
+          <div><%= f.label :'e-mail' %><div>
+          <div><%= f.text_field :email %></div>
+          <div><%= f.label :'password' %><div>
+          <div><%= f.text_field :password %></div>
+          <div><%= f.label :'年齢' %><div>
+          <div><%= f.text_field :age %></div>
+          <div><%= f.label :'郵便番号' %><div>
+          <div><%= f.text_field :postal_code %></div>
+          <div><%= f.label :'住所' %><div>
+          <div><%= f.text_field :address %></div>
+          <div><%= f.label :'電話番号' %><div>
+          <div><%= f.text_field :tel %></div>
+          <div><%= f.label :'性別' %><div>
+            <%= form_with model: User.new, locale: true do |f| %>
+              <div><%= f.label :gender, :男性, {value: :male, style: "display: inline-block;"} %></div>
+              <div><%= f.radio_button :male, 1 %></div>
+              <div><%= f.label :gender, :女性,  {value: :female, style: "display: inline-block;"} %></div>
+              <div><%= f.radio_button :female, 2 %></div>
+　　　　　　  <% end %>
+
+          <div><%= f.submit "新規作成" %></div>
+        <% end %>
+      </div>
+   

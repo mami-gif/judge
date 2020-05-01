@@ -1,3 +1,31 @@
 <h1>Judgeアプリとは</h1>
 　<h2>これから商品を売り出したい人が商品を一般の人にジャッジしてもらうアプリ</h2>		
-	<%= link_to '新規登録', users_login_form %>
+	<body>
+      <header>
+        <div class="header-logo">
+        <%= link_to("judgeApp", "/users") %>
+        </div>
+          <ul class="header-menus">
+        
+          	<li>
+              <%= link_to("商品投稿", "/products/new") %>
+            </li>
+            <li>
+              <%= link_to("Judge", "/products/new") %>
+            </li>
+            <li>
+              <%= link_to("ユーザー一覧", "/users/index") %>
+            </li>
+            <li>
+              <%= link_to("新規登録", "/signup") %>
+            </li>
+            <li>
+              <%= link_to("ログイン", "/login") %>
+            </li>
+            <li>
+              <%= link_to("投稿一覧", "/posts/index") %>
+            </li>
+
+          </ul>
+      </header>
+    </body>
