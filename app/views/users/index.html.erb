@@ -5,8 +5,15 @@
         <div class="header-logo">
         <%= link_to("judgeApp", "/users") %>
         </div>
+          
+            <div>
+              現在ログインしているユーザーのid:
+               <%= session[:user_id] %>    
+            </div>
+          
           <ul class="header-menus">
-        
+
+   
           	<li>
               <%= link_to("商品投稿", "/products/new") %>
             </li>
@@ -26,6 +33,34 @@
               <%= link_to("投稿一覧", "/posts/index") %>
             </li>
 
+         
           </ul>
+
+      
+
       </header>
+
+      <main>
+      
+  			<% @users.each do |user| %>
+  			<tr>
+  				<td><%= user.first_name %></td>
+  				<td><%= user.last_name %></td>
+  				<td><%= user.email %></td>
+  				<td><%= user.password %></td>
+  				<td><%= user.age %></td>
+  				<td><%= user.female_male %></td>
+  				<td><%= user.postal_code %></td>
+  				<td><%= user.address %></td>
+  				<td><%= user.tel %></td>
+  				
+  				<td><%= link_to '編集', edit_user_path(user) %></td>
+  				<td><%= link_to '削除', user_path(user), method: :delete %></td>
+  			</tr>
+  			<% end %>
+  		
+
+
+      </main>
+
     </body>

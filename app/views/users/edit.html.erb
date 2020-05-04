@@ -1,5 +1,5 @@
 
-    <div>新規ユーザー登録</div>
+    <div>ユーサー編集</div>
     <%= flash[:notice] %>
          <p>ユーザー名</p>
         <%= form_for (@user) do |f| %>
@@ -23,9 +23,9 @@
           <div><%= f.label :'電話番号' %><div>
           <div><%= f.text_field :tel %></div>
           
-          <div><%= f.submit "新規作成" %></div>
+          <div><%= f.submit "更新" %></div>
         <% end %>
-      
+      </div>
    
 
 
