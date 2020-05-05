@@ -1,7 +1,6 @@
-
-    <div>ユーサー編集</div>
+  <div>ユーサー編集</div>
     <%= flash[:notice] %>
-         <p>ユーザー名</p>
+      <p>ユーザー名</p>
         <%= form_for (@user) do |f| %>
           <div><%= f.label :'姓' %><div>
           <div><%= f.text_field :first_name %></div>
@@ -22,11 +21,6 @@
           <div><%= f.text_field :address %></div>
           <div><%= f.label :'電話番号' %><div>
           <div><%= f.text_field :tel %></div>
-          
           <div><%= f.submit "更新" %></div>
         <% end %>
-      </div>
-   
-
-
-   
+      

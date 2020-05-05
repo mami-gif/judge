@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	if user.save
 	  redirect_to users_path, notice: "保存が成功しました"
 	else  
-      render  new_user_path, notice: "保存が失敗しました"	
+      render action: :new, notice: "保存が失敗しました"	
 	end
   end
 
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   	  @error_message = "メールアドレスまたはパスワードが間違っています"
  	  @email = params[:email]
       @password = params[:password]
-      render login_form_user_path
+      render action: :login_form
     end
 	
   end	
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/login")
+    redirect_to login_path
   end
 
   private
