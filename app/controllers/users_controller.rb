@@ -50,6 +50,7 @@ class UsersController < ApplicationController
 	  session[:user_id] = @user.id
  	  flash[:notice] = "ログインしました"
       redirect_to users_path
+      
 	else
   	  @error_message = "メールアドレスまたはパスワードが間違っています"
  	  @email = params[:email]

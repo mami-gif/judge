@@ -9,15 +9,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header>
-      <% if session[:user_id] %>
-          <li>
-            現在ログインしているユーザーのid:
-             <%= session[:user_id] %>    
-          </li>
-          
-      <% end %>
-    </header>
     <%= yield %>
   </body>
 </html>

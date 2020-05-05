@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get "signup" => "users#new"
   get"login" => "users#login_form"
   post"login" => "users#login"
+  get "logout" => "users#logout"
+  post "logout" => "users#logout"
 end
