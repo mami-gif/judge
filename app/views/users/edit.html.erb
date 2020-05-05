@@ -1,7 +1,7 @@
   <div>ユーサー編集</div>
     <%= flash[:notice] %>
       <p>ユーザー名</p>
-        <%= form_for (@user) do |f| %>
+        <%= form_with model: @user do |f| %>
           <div><%= f.label :'姓' %><div>
           <div><%= f.text_field :first_name %></div>
           <div><%= f.label :'名' %><div>
