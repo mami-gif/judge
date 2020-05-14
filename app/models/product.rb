@@ -1,15 +1,14 @@
 class Product < ApplicationRecord
-  belongs_to :users
-  enum status: [ :luxury, :daily ]
-  enum variety: [ :foods, :goods ]
-  validates :user_id,
+  belongs_to :user
+  enum status: [ :Luxury, :Daily ]
+  enum variety: [ :Foods, :Goods ]
+  mount_uploader :photo, ImagesUploader
+  validates :user,
   presence: true
   validates :status,
   presence: true
-  validates :last_name,
-  presence: true
   validates :variety,
-  presence: true,
+  presence: true
   validates :name,
   presence: true
   validates :price,
