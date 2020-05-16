@@ -1,4 +1,4 @@
-<h1></h1>
+<h1>商品詳細ページ</h1>
   <table>
     <tr>
       <th>status</th>	
@@ -20,7 +20,7 @@
 	  <%= image_tag @product.photo.to_s %>
 	  <td><%= @product.comment %></td>
     </tr>
-     <div><%= link_to "トップページ", products_path %></div>
-     <div><%= link_to "Judge", products_path %></div>
-     <div><%= link_to "編集", edit_product_path(@product) %></div>
+      <div><%= link_to "トップページ", products_path %></div>
+      <div><%= link_to "Judge", products_path %></div>
+      <div><%= link_to "編集", edit_product_path(@product) %></div>
    </table>
