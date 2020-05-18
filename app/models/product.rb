@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
-  enum status: [ :Luxury, :Daily ]
-  enum variety: [ :Foods, :Goods ]
+  enum status: { Luxury: 'luxury', Daily: 'daily' } 
+  enum variety: { Foods: 'foods', Goods: 'goods' }
   mount_uploader :photo, ImagesUploader
   validates :user,
   presence: true
