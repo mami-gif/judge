@@ -47,11 +47,8 @@
 				  <td><%= product.limited_number %></td>
 				  <td><%= product.first_time %></td>
 				  <td><%= product.last_time %></td>
-				  
 				  <%= image_tag product.photo.to_s %>
 				  <td><%= product.comment %></td>
-				  <td><%= link_to '編集', edit_product_path(product) %></td>
-				  <td><%= link_to '削除', product_path(product), method: :delete %></td>
 				  <td><%= link_to "商品ページ", product_path(product) %></td>
 			   </tr>
 			<% end %>

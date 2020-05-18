@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  
   def index
     @products = Product.all
   end
@@ -15,9 +14,9 @@ class ProductsController < ApplicationController
   def create
   	 product = Product.new(product_params)
     if product.save
-	   redirect_to products_path, notice: "保存が成功しました"
+	  redirect_to products_path, notice: "保存が成功しました"
     else
-       render action: :new, notice: "保存が失敗しました"
+      render action: :new, notice: "保存が失敗しました"
     end
   end
 
@@ -31,8 +30,7 @@ class ProductsController < ApplicationController
       redirect_to products_path, notice: "更新しました"
 	else
       redirect_to edit_product_path(product), notice: "更新が失敗しました"
-	end
-		   
+	end	   
   end
 		
   def destroy
