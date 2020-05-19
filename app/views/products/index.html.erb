@@ -7,8 +7,8 @@
 		</div>
 		<% if session[:user_id] %>
 		<div>
-			現在ログインしているユーザーのid:
-			<%= session[:user_id] %>    
+			現在ログインしているユーザーのid:<!-- 最後に消す -->
+			<%= session[:user_id] %>  <!-- 最後に消す -->  
 		</div>
 		<ul class="header-menus">
 			<li>
@@ -26,7 +26,7 @@
 				<%= link_to "Judge", users_path %>
 			</li>
 			<li>
-				<%= link_to "ユーザー一覧", users_path %><!-- 消す -->
+				<%= link_to "ユーザー一覧", users_path %>
 			</li>
 			<li>
 				<%= link_to "新規登録", new_user_path %>
@@ -37,20 +37,21 @@
 		</ul>
 	</header>
 	<main>
-		<% @users.each do |user| %>
+		<% @products.each do |product| %>
 		　　<tr>
-			<td><%= user.first_name %></td>
-			<td><%= user.last_name %></td>
-			<td><%= user.email %></td>
-			<td><%= user.password %></td>
-			<td><%= user.age %></td>
-			<td><%= user.female_male %></td>
-			<td><%= user.postal_code %></td>
-			<td><%= user.address %></td>
-			<td><%= user.tel %></td>
-			<td><%= link_to '編集', edit_user_path(user) %></td>
-			<td><%= link_to '削除', user_path(user), method: :delete %></td>
+			<td><%= product.user_id %></td><!-- 最後に消す -->
+			<td><%= product.status %></td>
+			<td><%= product.variety %></td>
+			<td><%= product.name %></td>
+			<td><%= product.price %></td>
+			<td><%= product.limited_number %></td>
+			<td><%= product.first_time %></td>
+			<td><%= product.last_time %></td>
+			<%= image_tag product.photo.to_s %>
+			<td><%= product.comment %></td>
+			<td><%= link_to "商品詳細ページ", product_path(product) %></td>
 		</tr>
 		<% end %>
 	</main>
 </body>
+

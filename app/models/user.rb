@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :products
   validates :first_name,
   presence: true
   validates :last_name,
@@ -17,5 +18,5 @@ class User < ApplicationRecord
   validates :address,
   presence: true
   validates :tel,
-  presence: true
+  presence: true  
 end
