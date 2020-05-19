@@ -21,6 +21,10 @@
 	  <td><%= @product.comment %></td>
     </tr>
       <div><%= link_to "トップページ", products_path %></div>
+      <!-- レビューページを作ったらリンクする -->
+      <div><%= link_to "レビュー", products_path %></div>
+      <% if @product.user_id == @current_user.id %>
       <div><%= link_to "編集", edit_product_path(@product) %></div>
       <div><%= link_to '削除', product_path(@product), method: :delete %></div>
+      <% end %>
    </table>
