@@ -1,57 +1,57 @@
 <h1>Judgeアプリとは</h1>
 　<h2>これから商品を売り出したい人が商品を一般の人にジャッジしてもらうアプリ</h2>		
-    <body>
-      <header>
-        <div class="header-logo">
-          <%= link_to "judgeApp",  users_path %>
-        </div>
-          <% if session[:user_id] %>
-            <div>
-              現在ログインしているユーザーのid:
-              <%= session[:user_id] %>    
-            </div>
-              <ul class="header-menus">
-                <li>
-		          <%= link_to "ログアウト", logout_path %>
-		        </li>
-		  <% else %>
-		  		<li>
-		          <%= link_to "ログイン", login_path %>
-		        </li>
-		  <% end %>
-                <li>
-                  <%= link_to "商品投稿", new_product_path %>
-                </li>
-		        <li>
-		          <%= link_to "Judge", users_path %>
-		        </li>
-		        <li>
-		          <%= link_to "ユーザー一覧", users_path %>
-		        </li>
-		        <li>
-		          <%= link_to "新規登録", new_user_path %>
-		        </li>
-		        <li>
-		          <%= link_to "投稿一覧", users_path %>
-		        </li>
-		     </ul>
-		  </header>
-		  <main>
-			<% @products.each do |product| %>
-			　　<tr>
-				  <td><%= product.user_id %></td>
-				  <td><%= product.status %></td>
-			      <td><%= product.variety %></td>
-				  <td><%= product.name %></td>
-				  <td><%= product.price %></td>
-				  <td><%= product.limited_number %></td>
-				  <td><%= product.first_time %></td>
-				  <td><%= product.last_time %></td>
-				  <%= image_tag product.photo.to_s %>
-				  <td><%= product.comment %></td>
-				  <td><%= link_to "商品ページ", product_path(product) %></td>
-			   </tr>
+<body>
+	<header>
+		<div class="header-logo">
+			<%= link_to "judgeApp",  users_path %>
+		</div>
+		<% if session[:user_id] %>
+		<div>
+			現在ログインしているユーザーのid:<!-- 最後に消す -->
+			<%= session[:user_id] %>  <!-- 最後に消す -->  
+		</div>
+		<ul class="header-menus">
+			<li>
+				<%= link_to "ログアウト", logout_path %>
+			</li>
+			<% else %>
+			<li>
+				<%= link_to "ログイン", login_path %>
+			</li>
 			<% end %>
-		  </main>
-		</body>
+			<li>
+				<%= link_to "商品投稿", new_product_path %>
+			</li>
+			<li>
+				<%= link_to "Judge", users_path %>
+			</li>
+			<li>
+				<%= link_to "ユーザー一覧", users_path %>
+			</li>
+			<li>
+				<%= link_to "新規登録", new_user_path %>
+			</li>
+			<li>
+				<%= link_to "投稿一覧", users_path %>
+			</li>
+		</ul>
+	</header>
+	<main>
+		<% @products.each do |product| %>
+		　　<tr>
+			<td><%= product.user_id %></td><!-- 最後に消す -->
+			<td><%= product.status %></td>
+			<td><%= product.variety %></td>
+			<td><%= product.name %></td>
+			<td><%= product.price %></td>
+			<td><%= product.limited_number %></td>
+			<td><%= product.first_time %></td>
+			<td><%= product.last_time %></td>
+			<%= image_tag product.photo.to_s %>
+			<td><%= product.comment %></td>
+			<td><%= link_to "商品詳細ページ", product_path(product) %></td>
+		</tr>
+		<% end %>
+	</main>
+</body>
 

@@ -18,5 +18,5 @@ class User < ApplicationRecord
   validates :address,
   presence: true
   validates :tel,
-  presence: true
+  presence: true  
 end
