@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :reviews, dependent: :destroy
   enum status: { Luxury: 'luxury', Daily: 'daily' } 
   enum variety: { Foods: 'foods', Goods: 'goods' }
   mount_uploader :photo, ImagesUploader
