@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     review = @product.reviews.new(review_params)
     if review.save
-      redirect_to products_path, notice: "保存が成功しました"
+      redirect_to product_path(@product), notice: "保存が成功しました"
     else
       render action: :new, notice: "保存が失敗しました"
     end

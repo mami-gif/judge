@@ -20,9 +20,33 @@
     <%= image_tag @product.photo.to_s %>
     <td><%= @product.comment %></td>
   </tr>
+  <tr>
+    <th>総合</th> 
+    <th>パッケージ</th>
+    <th>金額</th>
+    <th>カラー</th>
+    <th>量</th>
+    <th>ネーミング</th>
+    <th>コンセプト</th>
+    <th>バランス</th>
+    <th>コメント</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    　　<tr>
+      <td><%= review.total %></td>
+      <td><%= review.package %></td>
+      <td><%= review.price %></td>
+      <td><%= review.color %></td>
+      <td><%= review.amount %></td>
+      <td><%= review.naming %></td>
+      <td><%= review.concept %></td>
+      <td><%= review.balance %></td>
+      <td><%= review.comment %></td>
+    </tr>
+    <% end %>
   <div><%= link_to "トップページ", products_path %></div>
   <!-- レビューページを作ったらリンクする -->
-  <div><%= link_to "レビュー", product_reviews_new_path(@product) %></div>
+  <div><%= link_to "レビュー", new_product_review_path(@product) %></div>
   <% if @product.user_id == @current_user.id %>
   <div><%= link_to "編集", edit_product_path %></div>
   <div><%= link_to '削除', product_path(@product), method: :delete %></div>

@@ -1,6 +1,6 @@
 <h1>Review sheets</h1>
 <%= flash[:notice] %>
-<%= form_with model: @reviews do |f| %>
+<%= form_with(model: [@product, @review] , local: true) do |f| %>
   <div><%= f.label :'総合' %><div>
   <div><%= f.radio_button :total, "1" %> 1<div>
   <div><%= f.radio_button :total, "2" %> 2<div> 
