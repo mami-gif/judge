@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   post"logout" => "users#logout"
   
   resources :products do
-     resources :reviews
-     
+  	get :search, on: :collection
+      resources :reviews
   end
 end
 
