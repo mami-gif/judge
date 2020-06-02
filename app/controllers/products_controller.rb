@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    # if params[:status][:variety]
-    #   @products = Product.where(status: params[:status]).where(variety: params[:variety])
-    # else
+    if params[:status] && params[:variety]
+      @products = Product.where(status: params[:status]).where(variety: params[:variety])
+    else
       @products = Product.all
     end
-  # end 
+  end 
 
   def show
     @product = Product.find(params[:id])
@@ -45,6 +45,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.permit(:status, :variety, :name, :price, :limited_number, :first_time, :last_time, :photo, :comment).merge(user_id: @current_user.id)
+    params.require(:product).permit(:status, :variety, :name, :price, :limited_number, :first_time, :last_time, :photo, :comment).merge(user_id: @current_user.id)
   end
 end
