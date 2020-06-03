@@ -13,7 +13,11 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if session[:user_id] == nil
+      redirect_to products_path
+    else
+      @product = Product.new
+    end 
   end
   
   def create
