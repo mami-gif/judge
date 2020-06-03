@@ -30,7 +30,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if request.referer == nil then
+      redirect_to product_path
+    else
     @product = Product.find(params[:id])
+    end
   end
 
   def update
