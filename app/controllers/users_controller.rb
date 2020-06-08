@@ -8,8 +8,12 @@ class UsersController < ApplicationController
   end
 
   def new
-   @user = User.new
- end	
+    if not_authenticate_user
+      @user = User.new
+    else
+      redirect_to products_path 
+    end 
+  end	
 
  def create
    user = User.new(user_params)
@@ -47,12 +51,12 @@ def login
  if @user
   session[:user_id] = @user.id
   flash[:notice] = "ログインしました"
-  redirect_to users_path
+  redirect_to products_path
 else
- @error_message = "メールアドレスまたはパスワードが間違っています"
- @email = params[:email]
- @password = params[:password]
- render action: :login_form
+  @error_message = "メールアドレスまたはパスワードが間違っています"
+  @email = params[:email]
+  @password = params[:password]
+  render action: :login_form
 end
 end
 

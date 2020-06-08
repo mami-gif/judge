@@ -13,7 +13,11 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if not_authenticate_user
+      redirect_to products_path
+    else
+      @product = Product.new
+    end 
   end
   
   def create
@@ -27,6 +31,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    redirect_to products_path unless @product.user_id == @current_user.id
   end
 
   def update

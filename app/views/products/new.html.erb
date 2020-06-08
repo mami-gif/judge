@@ -3,12 +3,12 @@
  <%= form_with model: @product do |f| %>  
  <div><%= f.label :'status' %></div>
  <% Product.statuses.each do |status| %>
- <div><%= f.label ("enums.products.status#{status[0]}")%></div>
+ <div><%= f.label "#{status[0]}"%></div>
  <div><%= f.radio_button :status, status[0,1]%></div>
  <% end %>
  <div><%= f.label :'variety' %></div>
  <% Product.varieties.each do |variety| %>
- <div><%= f.label ("enums.products.variety#{variety[0]}")%></div>
+ <div><%= f.label "#{variety[0]}"%></div>
  <div><%= f.radio_button :variety, variety[0,1]%></div>
  <% end %>
  <div><%= f.label :'商品名' %></div>
