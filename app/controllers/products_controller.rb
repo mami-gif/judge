@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if session[:user_id] == nil
+    if authenticate_user
       redirect_to products_path
     else
       @product = Product.new
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if request.referer == nil then
+    if request.referer == nil 
       redirect_to product_path
     else
     @product = Product.find(params[:id])
