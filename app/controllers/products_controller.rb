@@ -30,10 +30,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if request.referer == nil 
-      redirect_to product_path
-    else
     @product = Product.find(params[:id])
+    unless @product.user_id == @current_user.id
+      redirect_to products_path
     end
   end
 
