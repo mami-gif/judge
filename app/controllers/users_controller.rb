@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    if session[:user_id] == nil
+    if not_authenticate_user
       @user = User.new
     else
       redirect_to products_path 
