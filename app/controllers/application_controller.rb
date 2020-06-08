@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	  @current_user = User.find_by(id: session[:user_id])
 	end
 
-    def authenticate_user
+    def not_authenticate_user
       session[:user_id] == nil
     end
 end

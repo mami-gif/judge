@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if authenticate_user
+    if not_authenticate_user
       redirect_to products_path
     else
       @product = Product.new
