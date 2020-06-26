@@ -1,31 +1,35 @@
- <h1>商品登録</h1>
- <%= flash[:notice] %>
- <%= form_with model: @product do |f| %>  
- <div><%= f.label :'status' %></div>
- <% Product.statuses.each do |status| %>
- <div><%= f.label "#{status[0]}"%></div>
- <div><%= f.radio_button :status, status[0,1]%></div>
- <% end %>
- <div><%= f.label :'variety' %></div>
- <% Product.varieties.each do |variety| %>
- <div><%= f.label "#{variety[0]}"%></div>
- <div><%= f.radio_button :variety, variety[0,1]%></div>
- <% end %>
- <div><%= f.label :'商品名' %></div>
- <div><%= f.text_field :name %></div>
- <div><%= f.label :'価格' %></div>
- <div><%= f.text_field :price %></div>
- <div><%= f.label :'数量' %></div>
- <div><%= f.text_field :limited_number %></div>
- <div><%= f.label :'掲載期間' %></div>
- <div><%= f.text_field :first_time %></div>
- <div><%= f.text_field :last_time %></div>
- <div><%= f.label :'写真' %></div>
- <div><%= f.file_field :photo %></div>
- <div><%= f.label :'コメント' %></div>
- <div><%= f.text_field :comment %></div>  
- <div><%= f.submit "商品登録" %></div>
- <% end %>
- <div><%= link_to "トップページ", products_path %></div>
- 
+<div class="product">
+　　<div class="new">	 
+	 <div class="sample">商品登録</div>
+	 <%= flash[:notice] %>
+	 <%= form_with model: @product do |f| %>  
+	 <%= f.label :'status', class: "label-type"%>
+	 <% Product.statuses.each do |status| %>
+	 <%= f.label "#{status[0]}"%>
+	 <%= f.radio_button :status, status[0,1]%>
+	 <% end %>
+	 <%= f.label :'variety' , class: "label-type"%>
+	 <% Product.varieties.each do |variety| %>
+	 <%= f.label "#{variety[0]}"%>
+	 <%= f.radio_button :variety, variety[0,1]%>
+	 <% end %>
+	 <%= f.label :'商品名', class: "label" %>
+	 <%= f.text_field :name, class: "text", :size=>"60x20" %>
+	 <%= f.label :'価格', class: "label" %>
+	 <%= f.text_field :price, class: "text" %>
+	 <%= f.label :'数量', class: "label"%>
+	 <%= f.text_field :limited_number, class: "text" %>
+	 <%= f.label :'掲載期間', class: "label" %>
+	 <%= f.text_field :first_time, class: "text" %>
+	 <%= f.text_field :last_time, class: "text" %>
+	 <%= f.label :'写真', class: "label" %>
+	 <%= f.file_field :photo, class: "image-show" %>
+	 <%= image_tag @product.photo.to_s, class:"image" %>
+	 <%= f.label :'コメント', class: "label" %>
+	 <%= f.text_area :comment, class: "text", size: "70x10", style: "border: none" %>  
+	 <%= f.submit "商品登録",class: "new-btm"  %>
+	 <% end %>
+    </div>
+ </div>
+
  

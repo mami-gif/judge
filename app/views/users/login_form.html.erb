@@ -1,10 +1,20 @@
-<h1>ログイン</h1>
-<div ><%= @error_message %></div>
-<%= form_with url:login_path do |f| %>
-  <div><%= f.label :'メールアドレス' %><div>
-  <div><%= f.text_field :email %></div>
-  <div><%= f.label :'パスワード' %><div>
-  <div><%= f.text_field :password %></div>
-  <div><%= f.submit "ログイン" %></div>
-<% end %>
-<div><%= link_to "トップページ", products_path %></div>
+<div class="main">
+	
+<div class="main-user">
+<div class="wrapper">
+<!-- <div class="container"></div> -->	
+	<h1>Welcome</h1>
+	<div ><%= @error_message %></div>
+	<%= form_with url:login_path do |f| %>
+	  <%= f.label :'e-mail address', class:"label-log" %>
+	  <%= f.text_field :email, class:"log-field", :placeholder =>"e-mail", size: 50 , style: "border: none" %>
+	  <%= f.label :'password', class:"label-log" %>
+	  <%= f.text_field :password, class:"log-field", :placeholder =>"password", size: 50 , style: "border: none" %>
+	  <div ><%= f.submit "log in", class:"btm-log"  %></div>
+	<% end %>
+</div>
+</div>
+</div>
+</div>
+<!-- </div>
+ -->

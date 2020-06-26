@@ -1,17 +1,17 @@
+
 <main>
   <% @users.each do |user| %>
-    <tr>
-	<td><%= user.first_name %></td>
-	<td><%= user.last_name %></td>
-	<td><%= user.email %></td>
-	<td><%= user.password %></td>
-	<td><%= user.age %></td>
-	<td><%= user.female_male %></td>
-	<td><%= user.postal_code %></td>
-	<td><%= user.address %></td>
-	<td><%= user.tel %></td>
-	<td><%= link_to '編集', edit_user_path(user) %></td>
-	<td><%= link_to '削除', user_path(user), method: :delete %></td>
-	</tr>
+	<%= user.first_name %>
+	<%= user.last_name %>
+	<%= user.email %>
+	<%= user.password %>
+	<%= user.age %>
+	<%= user.female_male %>
+	<%= user.postal_code %>
+	<%= user.address %>
+	<%= user.tel %>
+	<%= link_to '編集', edit_user_path(user) %>
+	<%= link_to '削除', user_path(user), method: :delete %>
   <% end %>
 </main>
+ 

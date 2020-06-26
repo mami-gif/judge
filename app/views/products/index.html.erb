@@ -1,23 +1,51 @@
 <main>
-  <%= form_with url:products_path, method: :get, local: true do |f|  %>
-    <%= f.select :status, options_for_select(Product.statuses.keys) %>
-    <%= f.select :variety, options_for_select(Product.varieties.keys) %>
-    <%= f.submit "search" %>
-  <% end %>
- 
-  <% @products.each do |product| %>
-　  <tr>
-	<td><%= product.user_id %></td><!-- 最後に消す -->
-	<td><%= product.status %></td>
-	<td><%= product.variety %></td>
-	<td><%= product.name %></td>
-	<td><%= product.price %></td>
-	<td><%= product.limited_number %></td>
-	<td><%= product.first_time %></td>
-	<td><%= product.last_time %></td>
-	<%= image_tag product.photo.to_s %>
-	<td><%= product.comment %></td>
-	<td><%= link_to "商品詳細ページ", product_path(product) %></td>
-   </tr>
-  <% end %>
+	<div class="product">
+	　<div class="sample">商品一覧</div>
+		<div class="search">
+		  <p>type select</p>
+		  <%= form_with url:products_path, method: :get, local: true do |f|  %>
+		    <%= f.select :status, options_for_select(Product.statuses.keys), class:"select" %>
+		    <%= f.select :variety, options_for_select(Product.varieties.keys), class:"select" %>
+		    <%= f.submit "search", class:"search-btm" %>
+		  <% end %>
+		</div> 
+		<div class="product-list">
+		  <% @products.each do |product| %>
+		    <%= image_tag product.photo.to_s, class:"image" %>
+		    <div class="list-list">
+			　  <div class="list">user_id</div> <!-- 最後にuser_nameにする -->
+				<%= product.user_id %>
+				<div class="list">type</div>
+				<%= product.status %>
+				<%= product.variety %>
+				<div class="list">商品名</div>
+				<%= product.name %>
+			</div>
+			<div class="list-under">
+				<div class="list">金額</div>
+				<%= product.price %>
+				<div class="list-b">数量</div>
+				<%= product.limited_number %>
+				<div class="list-b">掲載期間</div>
+				<%= product.first_time %> 〜
+				<%= product.last_time %>
+		    </div>
+			<!-- <div class="list">コメント</div> -->
+			<div class="comment"><%= product.comment %></div>
+			<% if session[:user_id] %>
+			<%= link_to "商品詳細", product_path(product), class:"show-btm" %>
+			<% else %>
+			<div class="show-btm"><%= link_to "新規登録", new_user_path, :style=>"color:white;" %></div>
+			<div class="show-btm"><%= link_to "ログイン", login_path, :style=>"color:white;" %></div>
+			<% end %>
+			<p></p>
+		  <% end %>
+		  </div>
+		</div>
+	</div> 	
 </main>
+
+
+
+
+
