@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   	get :search, on: :collection
       resources :reviews
   end
+
+  get "/" => "top#home"
 end
 

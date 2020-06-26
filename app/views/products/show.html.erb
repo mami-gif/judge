@@ -1,16 +1,78 @@
+<div class="product">
+  <div class="show">
+
+ <div class="sample">商品詳細ページ</div>
+  <div class="image-show"><%= image_tag @product.photo.to_s %></div>
+    <div class="label-wrapper">
+      <div class="label-show">type</div>
+      <%= @product.status %>
+      <%= @product.variety %>
+      <div class="label-show">商品名</div>
+      <%= @product.name %>
+      <div class="label-show">金額</div>
+      <%= @product.price %>
+      <div class="label-show">数量 </div>
+      <%= @product.limited_number %>
+      <div class="label-show">掲載期間</div>
+      <%= @product.first_time %>
+      <%= @product.last_time %>
+      <div class="label-comment">コメント</div>
+      <%= @product.comment %>
+      </div> 
+
+    <div class="t-wrapper"> 
+    <table>
+    <tr>
+      <th>総合</th> 
+      <th>パッケージ</th>
+      <th>金額</th>
+      <th>カラー</th>
+      <th>量</th>
+      <th>ネーミング</th>
+      <th>コンセプト</th>
+      <th>バランス</th>
+      <th width: 30%;>コメント</th>
+    </tr>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.total %></td>
+        <td><%= review.package %></td>
+        <td><%= review.price %></td>
+        <td><%= review.color %></td>
+        <td><%= review.amount %></td>
+        <td><%= review.naming %></td>
+        <td><%= review.concept %></td>
+        <td><%= review.balance %></td>
+        <td><%= review.comment %></td>
+      </tr>
+      <% end %>
+    </table>
+    </div> 
+    </div>
+    <div class="back-btm"><%= link_to "一覧へ戻る", products_path, :style=>"color:white;" %></div>
+    <div class="back-btm"><%= link_to "レビュー", new_product_review_path(@product), :style=>"color:white;" %></div>
+    <% if @product.user_id == @current_user.id %>
+    <div class="back-btm"><%= link_to "編集", edit_product_path, :style=>"color:white;" %></div>
+    <div class="back-btm"><%= link_to '削除', product_path(@product), method: :delete, :style=>"color:white;" %></div>
+    <% end %>
+</div>
+
+
+
+<!-- 
 <h1>商品詳細ページ</h1>
 <table>
   <tr>
-    <th>status</th>	
+    <th>status</th> 
     <th>variety</th>
     <th>商品名</th>
     <th>金額</th>
-    <th>数量	</th>
+    <th>数量  </th>
     <th>掲載期間</th>
     <th>写真</th>
   </tr>
   <tr>
-    <td><%= @product.status %></td>	
+    <td><%= @product.status %></td> 
     <td><%= @product.variety %></td>
     <td><%= @product.name %></td>
     <td><%= @product.price %></td>
@@ -32,7 +94,7 @@
     <th>コメント</th>
   </tr>
   <% @reviews.each do |review| %>
-    　　<tr>
+    <tr>
       <td><%= review.total %></td>
       <td><%= review.package %></td>
       <td><%= review.price %></td>
@@ -46,9 +108,10 @@
     <% end %>
   <div><%= link_to "トップページ", products_path %></div>
   <!-- レビューページを作ったらリンクする -->
-  <div><%= link_to "レビュー", new_product_review_path(@product) %></div>
+  <!-- <div><%= link_to "レビュー", new_product_review_path(@product) %></div>
   <% if @product.user_id == @current_user.id %>
   <div><%= link_to "編集", edit_product_path %></div>
   <div><%= link_to '削除', product_path(@product), method: :delete %></div>
   <% end %>
 </table>
+ --> 

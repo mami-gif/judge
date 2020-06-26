@@ -1,3 +1,270 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com//
+
+.product {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 82%;
+  height: auto;
+}
+
+.sample {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro W3", Courier New, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+  border-bottom: 2px solid #000; 
+
+}
+
+.image {
+   display: inline-block;
+   float: left;
+   margin: 20px;
+   max-width: 100%;
+  height: auto;
+}
+
+.product-list{
+  display: inline-block;
+  width: 90%;
+  height: auto;
+  margin-top: 80px;
+  font-size: 18px;
+  background-color: #F1F1F1;
+}
+
+.product-list p {
+	padding: 30px;
+	border-bottom: 20px solid #FFF;
+}
+
+
+
+.search {
+  display: inline-block;
+  text-align: center;
+}
+
+.search p {
+  text-align: center;
+  font-size: 25px;
+}
+
+.search-btm {
+  display: inline-block;
+  padding: 7px 30px;
+  border-radius: 25px;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.select {
+	width: 30px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.list {
+  color: #888888;
+  font-size: 15px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-left:  6px solid #888888;
+}
+
+.list-list {
+}
+
+.list-b {
+  color: #888888;
+  font-size: 17px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-left:  6px solid #888888;
+}
+
+
+.comment{
+  font-size: 15px;
+  margin: 30px 40px 0 0;
+  
+}
+
+.show-btm {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  width: 120px;
+  height: 80px;
+  line-height: 80px;
+  border-radius:50%;
+  text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  transition: .4s fca;
+  margin: 30px 0 0 100px ;
+}
+
+
+.new {
+  background-color: #F1F1F1;
+}
+
+.label-type {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #999999;
+  color: #FFF;
+  padding: 15px 20px;
+}
+
+.label {
+  color: #888888;
+  font-size: 20px;
+  display: block;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 30%;
+  height: 10px;
+  text-align: center;
+}
+
+.text {
+  font-size: 15px;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5em 3em;
+  border-radius: 4px;
+  background-color: white;
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro W3", Courier New, sans-serif;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.new-btm {
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 15px;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  transition: .4s fca;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+.back-btm {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #FFF;
+  background-color: #999999;
+  transition: .4s;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+
+.show {
+  background-color: #F1F1F1;
+  margin-top: 100px;
+  height: auto;
+}
+
+.image-show {
+ margin: 30px;
+ max-width: 100%;
+ height: auto;
+
+}
+
+.label-wrapper{
+	display: inline-block;
+	text-align: left;
+	width: 70%;
+	height:25%;
+}
+
+.label-show {
+  color: #888888;
+  font-size: 17px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  border-left:  6px solid #888888;
+}
+
+.label-comment{
+  color: #888888;
+  font-size: 17px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  border-left:  6px solid #888888;
+}
+
+/*.t-wrapper {
+  width: 80%;	
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+
+}*/
+
+table {
+  margin-top: 30px;	
+  padding-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;	
+  width: 70%;
+  border-collapse: collapse;
+}
+
+table tr {
+  background-image: linear-gradient(40deg, #fce043 0%, #fb7ba2 74%);
+}
+
+table tr:last-child * {
+  border-bottom: none;
+}
+
+table th,table td {
+  text-align: center;
+  border: solid 2px #fff;
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  
+}
+
+
+
+
+
+

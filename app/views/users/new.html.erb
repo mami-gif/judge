@@ -1,27 +1,21 @@
-
- <div>新規ユーザー登録</div>
-    <%= flash[:notice] %>
-      <p>ユーザー名</p>
+<div class="main">
+<div class="main-user">
+<div class="container">  
+   <h1>新規登録</h1>
+      <%= flash[:notice] %>
         <%= form_with model: @user do |f| %>
-          <div><%= f.label :'姓' %><div>
-          <div><%= f.text_field :first_name %></div>
-          <div><%= f.label :'名' %><div>
-          <div><%= f.text_field :last_name %></div>
-          <div><%= f.label :'e-mail' %><div>
-          <div><%= f.text_field :email %></div>
-          <div><%= f.label :'password' %><div>
-          <div><%= f.text_field :password %></div>
-          <div><%= f.label :'年齢' %><div>
-          <div><%= f.text_field :age %></div>
-          <div><%= f.label :'性別' %><div>
-          <div><%= f.radio_button :female_male, "男" %> 男<div>
-          <div><%= f.radio_button :female_male, "女" %> 女<div> 
-          <div><%= f.label :'郵便番号' %><div>
-          <div><%= f.text_field :postal_code %></div>
-          <div><%= f.label :'住所' %><div>
-          <div><%= f.text_field :address %></div>
-          <div><%= f.label :'電話番号' %><div>
-          <div><%= f.text_field :tel %></div>
-          <div><%= f.submit "新規作成" %></div>
+          <div><%= f.label :'e-mail', class:"label-new"  %> <%= f.text_field :email, :placeholder =>"e-mail", class: "field-new", size: 50 , style: "border: none" %></div>
+          <div><%= f.label :'password', class:"label-new"  %> <%= f.text_field :password, :placeholder =>"password", class: "field-new", size: 50 , style: "border: none" %></div>
+          <div><%= f.label :'姓', class:"label-new" %> <%= f.text_field :first_name, :placeholder =>"姓", class: "field-new", size: 50 , style: "border: none"%></div>
+          <div><%= f.label :'名', class:"label-new"  %> <%= f.text_field :last_name, :placeholder =>"名", class: "field-new", size: 50 , style: "border: none" %></div>
+          <div><%= f.label :'年齢', class:"label-new"  %> <%= f.text_field :age, class: "field-new", :placeholder =>"年齢", size: 50 , style: "border: none" %><div>
+          <div><%= f.label :'郵便番号', class:"label-new"  %> <%= f.text_field :postal_code, class: "field-new", :placeholder =>"郵便番号", size: 50 , style: "border: none" %></div>
+          <div><%= f.label :'住所', class:"label-new"  %> <%= f.text_field :address, class: "field-new", :placeholder =>"住所", size: 50 , style: "border: none" %></div>
+          <div><%= f.label :'電話番号', class:"label-new"  %> <%= f.text_field :tel, class: "field-new", :placeholder =>"tel", size: 50 , style: "border: none" %></div>
+          <div><%= f.label :'性別' , class:"label-new" %> <%= f.radio_button :female_male, "男", class:"radio" %> 男 <%= f.radio_button :female_male, "女", class:"radio" %> 女<div>
+          <div><%= f.submit "新規登録", class:"btm" %></div>
         <% end %>
+  </div>     
+  </div>
+  </div>
       

@@ -4,49 +4,49 @@
     <title>Judge</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <h1>Judgeアプリとは</h1>
-　<h2>これから商品を売り出したい人が商品を一般の人にジャッジしてもらうアプリ</h2>   
-<body>
-  <header>
+  <div class="header">
+    <div class="header-fixed">
     <div class="header-logo">
-      <%= link_to "judgeApp",  users_path %>
+      <%= link_to "judge",  "/",:style=>"color:white;" %>
     </div>
+    <span class="header-user">現在ログインしているユーザーのid:
+        <%= session[:user_id] %>  
+    </span>
     <% if session[:user_id] %>
-    <div>
-      現在ログインしているユーザーのid:
-      <%= session[:user_id] %>    
-    </div>
     <ul class="header-menus">
       <li>
-        <%= link_to "ログアウト", logout_path %>
+        <%= link_to "ログアウト", logout_path,:style=>"color:white;" %>
       </li>
-      <% else %>
       <li>
-        <%= link_to "ログイン", login_path %>
+        <%= link_to "商品投稿", new_product_path,:style=>"color:white;" %>
+      </li>
+　   <% else %>
+      <li>
+        <%= link_to "新規登録", new_user_path,:style=>"color:white;" %>
+      </li>
+      <li>
+        <%= link_to "ログイン", login_path,:style=>"color:white;" %>
       </li>
       <% end %>
+    
+     
       <li>
-        <%= link_to "商品投稿", new_product_path %>
+        <%= link_to "ユーザー一覧", users_path,:style=>"color:white;" %>
       </li>
       <li>
-        <%= link_to "Judge", products_path %>
-      </li>
-      <li>
-        <%= link_to "ユーザー一覧", users_path %><!-- 消す -->
-      </li>
-      <li>
-        <%= link_to "新規登録", new_user_path %>
-      </li>
-      <li>
-        <%= link_to "投稿一覧", products_path %>
+        <%= link_to "投稿一覧", products_path,:style=>"color:white;" %>
       </li>
     </ul>
-  </header>
+  </div>
+  <div class="main">
+    
+  <div class="footer-fixed">
+  <div class="footer"></div>
     <%= yield %>
   </body>
 </html>

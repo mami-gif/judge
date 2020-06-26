@@ -1,0 +1,21 @@
+<div class="main">
+	
+	<div class="copy">
+	<h1>Judge</h1>
+	　<p>色んな人に商品をジャッジしてもらおう</p> 
+	  <p>これから商品を売り出したい人が一般の人から意見してもらうアプリです。</p>
+	  <p>商品を作っていると、</p>
+	  <p>商品の価値…。実際にどれくらい需要があるか…。パッケージや第一印象…。</p>
+	  <p>知りたいことがたくさんあるはず。</p>
+	  <p>さあ、始めてみよう。</p>
+    <% if session[:user_id] %> 
+	<div class="judge-btm"><%= link_to "start", products_path,:style=>"color:white;" %></div>
+	<% end %>
+    <% unless session[:user_id] %>
+	<div class="judge-btm"><%= link_to "新規登録", new_user_path, :style=>"color:white;" %></div>
+	<div class="judge-btm"><%= link_to "ログイン", login_path, :style=>"color:white;" %></div>	
+	<% end %>
+	
+    </div>
+			
+</div>
